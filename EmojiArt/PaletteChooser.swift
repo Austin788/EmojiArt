@@ -24,7 +24,7 @@ struct PaletteChooser: View {
                 .onTapGesture {
                     self.showPaletteEditor = true
                 }
-                .sheet(isPresented: $showPaletteEditor) {
+                .popover(isPresented: $showPaletteEditor) {
                     PaletteEditor(chosenPalette: self.$chosenPalette, isShowing: $showPaletteEditor)
                         .environmentObject(self.document)
                         .frame(minWidth: 300, minHeight: 500)

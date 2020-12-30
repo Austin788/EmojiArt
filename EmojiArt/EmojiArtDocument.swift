@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class EmojiArtDocument: ObservableObject, Hashable, Equatable {
+class EmojiArtDocument: ObservableObject, Hashable, Equatable, Identifiable {
     static func == (lhs: EmojiArtDocument, rhs: EmojiArtDocument) -> Bool {
         lhs.id == rhs.id
     }
@@ -19,12 +19,11 @@ class EmojiArtDocument: ObservableObject, Hashable, Equatable {
     }
     
     
-    
-    
-    
     static let palette: String = "👣🧚🏻‍♀️🌴🐿🌝🍺"
     
     @Published private var emojiArt: EmojiArt
+    @Published var steadyStateZoomScale: CGFloat = 1.0
+    @Published var steadyStatePanOffset: CGSize = .zero
         
     private var autosaveCancellable: AnyCancellable?
     init(id: UUID? = UUID()) {
