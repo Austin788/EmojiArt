@@ -61,7 +61,7 @@ struct EmojiArtDocumentView: View {
                     return self.drop(providers: providers, at: location)
                 }
                 
-                .navigationBarItems(trailing: Button(action: {
+                .navigationBarItems(leading: self.pickImage, trailing: Button(action: {
                     if let url = UIPasteboard.general.url, url != self.document.backgroundURL {
                         self.confirmBackgroundPaste = true
                     } else {
@@ -87,6 +87,12 @@ struct EmojiArtDocumentView: View {
                 },
                 secondaryButton: .cancel()
             )
+        }
+    }
+    
+    private var pickImage: some View {
+        Image(systemName: "photo").imageScale(.large).foregroundColor(.accentColor).onTapGesture {
+        
         }
     }
     
