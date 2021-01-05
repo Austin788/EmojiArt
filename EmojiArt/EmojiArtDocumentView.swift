@@ -74,7 +74,7 @@ struct EmojiArtDocumentView: View {
                             message: Text("Copy the URL of an image to set background image"),
                             dismissButton: .default(Text("OK")))
                     }
-                }) )
+                }))
             }
             .zIndex(-1)
         }

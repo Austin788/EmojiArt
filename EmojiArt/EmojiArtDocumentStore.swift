@@ -50,6 +50,7 @@ class EmojiArtDocumentStore: ObservableObject
     }
 }
 
+
 extension Dictionary where Key == EmojiArtDocument, Value == String {
     var asPropertyList: [String:String] {
         var uuidToName = [String:String]()

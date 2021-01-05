@@ -18,9 +18,7 @@ class EmojiArtDocument: ObservableObject, Hashable, Equatable, Identifiable {
         hasher.combine(id)
     }
     
-    
-    static let palette: String = "👣🧚🏻‍♀️🌴🐿🌝🍺"
-    
+        
     @Published private var emojiArt: EmojiArt
     @Published var steadyStateZoomScale: CGFloat = 1.0
     @Published var steadyStatePanOffset: CGSize = .zero
